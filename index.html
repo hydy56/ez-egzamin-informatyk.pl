@@ -10,6 +10,9 @@
         <label for="odp">Ile dobrych odpowiedzi</label>
         <input type="text" id="odp" name="odp" required>
         <br>
+        <div id="error">
+
+        </div>
         <button type="button" onclick="submitForm()">Wyślij</button>
     </form>
 
@@ -17,12 +20,17 @@
         function submitForm() {
             // Pobieranie danych z formularza
             const odp = document.getElementById('odp').value;
+            if(odp > 40){
+                document.getElementById('error').innerHTML = `
+                    <h1 style="color: red;">Debilu jest max 40 pytan</h1>
+                `
+            }else{
+                // Przechowywanie danych w localStorage
+                localStorage.setItem('odp', odp);
 
-            // Przechowywanie danych w localStorage
-            localStorage.setItem('odp', odp);
-
-            // Przekierowanie do strony wyświetlającej dane
-            window.location.href = 'main.html';
+                // Przekierowanie do strony wyświetlającej dane
+                window.location.href = 'main.html';
+            }
         }
     </script>
 </body>
