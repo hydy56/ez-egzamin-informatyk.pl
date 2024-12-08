@@ -147,7 +147,7 @@
 								while($row = $result->fetch_assoc()) {
 									?>
 										<div class="trescE" bis_skin_checked="1">
-											<?= $id.". ".$row['title']?>
+											<?= $id.". ".htmlspecialchars($row['title'])?>
 										</div>
 										<div class="rezultatY" bis_skin_checked="1">
 											Tak jest, Twoja odpowiedź: <?= $row['correct']?> jest poprawna!
@@ -156,52 +156,52 @@
 											if($row['correct'] == "A"){
 												?>
 													<div id="odpa1" class="odpgood" bis_skin_checked="1">
-														<strong>A. </strong><?= $row['odp1'] ?>
+														<strong>A. </strong><?= htmlspecialchars($row['odp1']) ?>
 													</div>
 												<?php	
 											}else{
 												?>
 													<div id="odpa1" class="odpbad" bis_skin_checked="1">
-														<strong>A. </strong><?= $row['odp1'] ?>
+														<strong>A. </strong><?= htmlspecialchars($row['odp1']) ?>
 													</div>
 												<?php
 											}
 											if($row['correct'] == "B"){
 												?>
 													<div id="odpa1" class="odpgood" bis_skin_checked="1">
-														<strong>B. </strong><?= $row['odp2'] ?>
+														<strong>B. </strong><?= htmlspecialchars($row['odp2']) ?>
 													</div>
 												<?php	
 											}else{
 												?>
 													<div id="odpa1" class="odpbad" bis_skin_checked="1">
-														<strong>B. </strong><?= $row['odp2'] ?>
+														<strong>B. </strong><?= htmlspecialchars($row['odp2']) ?>
 													</div>
 												<?php
 											}
 											if($row['correct'] == "C"){
 												?>
 													<div id="odpa1" class="odpgood" bis_skin_checked="1">
-														<strong>C. </strong><?= $row['odp3'] ?>
+														<strong>C. </strong><?= htmlspecialchars($row['odp3']) ?>
 													</div>
 												<?php	
 											}else{
 												?>
 													<div id="odpa1" class="odpbad" bis_skin_checked="1">
-														<strong>C. </strong><?= $row['odp3'] ?>
+														<strong>C. </strong><?= htmlspecialchars($row['odp3']) ?>
 													</div>
 												<?php
 											}
 											if($row['correct'] == "D"){
 												?>
 													<div id="odpa1" class="odpgood" bis_skin_checked="1">
-														<strong>D. </strong><?= $row['odp4'] ?>
+														<strong>D. </strong><?= htmlspecialchars($row['odp4']) ?>
 													</div>
 												<?php	
 											}else{
 												?>
 													<div id="odpa1" class="odpbad" bis_skin_checked="1">
-														<strong>D. </strong><?= $row['odp4'] ?>
+														<strong>D. </strong><?= htmlspecialchars($row['odp4']) ?>
 													</div>
 												<?php
 											}
