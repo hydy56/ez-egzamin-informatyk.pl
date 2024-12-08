@@ -24,7 +24,7 @@
                 `;
             } else {
                 localStorage.setItem('odp', odp); // Zapis do localStorage
-                window.location.href = 'main.html'; // Przekierowanie
+                window.location.href = 'odpowiedzi-inf03-ee09-programowanie-bazy-danych.php'; // Przekierowanie
             }
         }
 
