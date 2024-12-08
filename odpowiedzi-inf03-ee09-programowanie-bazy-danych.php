@@ -121,13 +121,11 @@
 						</div>
 						
 						<div class="col-md-12" style="border-bottom:1px solid #FA6C65;border-top:1px solid #FA6C65;" data-aos="fade-up" bis_skin_checked="1">
-							<div id="zegar1" bis_skin_checked="1"></div>
-							<script>
-								const odp = localStorage.getItem('odp');
-								document.getElementById('zegar1').innerHTML = `
-									Po wielkiej bitwie opadł kurz! <span style="color:#FA6C65;">Uzyskany wynik: ${odp * 2.5}% (${odp}/40)</span>
-								`;
-							</script>
+							<div id="zegar1" bis_skin_checked="1"><?php
+								$good = $_POST['odp'];
+								$percent = $good * 2.5;
+								echo "Po wielkiej bitwie opadł kurz! <span style='color:#FA6C65;'>Uzyskany wynik: $percent% ($good/40)</span>";
+							?></div>
 						</div>
 						
 					</div>
@@ -143,7 +141,7 @@
 								$start = rand(0,1074 - 40);
 								$end = $start + 40;
 								
-								$sql = "SELECT * FROM ee09 WHERE id >= $start && id <= $end";
+								$sql = "SELECT * FROM ee09 WHERE id >= $start && id < $end";
 								$result = $conn->query($sql);
 								$id = 1;
 								while($row = $result->fetch_assoc()) {
@@ -208,7 +206,6 @@
 												<?php
 											}
 											?>
-											<div class="sep" bis_skin_checked="1"></div>
 											<?php
 									$id++;
 								}
